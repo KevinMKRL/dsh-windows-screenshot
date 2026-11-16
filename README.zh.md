@@ -3,6 +3,7 @@
 # dsh-windows-screenshot
 
 [![GitHub release](https://img.shields.io/github/v/release/KevinMKRL/dsh-windows-screenshot)](https://github.com/KevinMKRL/dsh-windows-screenshot/releases)
+[![npm](https://img.shields.io/npm/v/dsh-windows-screenshot)](https://www.npmjs.com/package/dsh-windows-screenshot)
 [![platform](https://img.shields.io/badge/platform-Windows-0078D4)](https://github.com/KevinMKRL/dsh-windows-screenshot)
 [![DSH](https://img.shields.io/badge/DSH-0.2.2--rc.1%2B-4D6BFE)](https://github.com/deepseek-ai/deepseek-harness)
 [![license](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
@@ -15,16 +16,16 @@
 
 ## 安装
 
-从 GitHub 安装（当前可用）：
-
-```sh
-dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
-```
-
-npm 包 `dsh-windows-screenshot` 已提交、等待 npm 审核。如果 `npm view dsh-windows-screenshot version` 显示 `0.0.0-stage`，说明还没审核通过，请先用上面的 GitHub 命令。审核通过后，也可以直接用：
+从 npm 安装（推荐）：
 
 ```sh
 dsh plugin --profile web add dsh-windows-screenshot
+```
+
+从 GitHub 源码安装：
+
+```sh
+dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
 ```
 
 如果你的 profile 不叫 `web`（例如 `desktop`），把命令里的 `web` 换成实际 profile 名。安装后在 **插件** 页启用组合包；如果刚安装 Host 半，需要重启 DSH。

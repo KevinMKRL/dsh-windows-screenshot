@@ -3,6 +3,7 @@ English | [中文](README.zh.md)
 # dsh-windows-screenshot
 
 [![GitHub release](https://img.shields.io/github/v/release/KevinMKRL/dsh-windows-screenshot)](https://github.com/KevinMKRL/dsh-windows-screenshot/releases)
+[![npm](https://img.shields.io/npm/v/dsh-windows-screenshot)](https://www.npmjs.com/package/dsh-windows-screenshot)
 [![platform](https://img.shields.io/badge/platform-Windows-0078D4)](https://github.com/KevinMKRL/dsh-windows-screenshot)
 [![DSH](https://img.shields.io/badge/DSH-0.2.2--rc.1%2B-4D6BFE)](https://github.com/deepseek-ai/deepseek-harness)
 [![license](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
@@ -18,19 +19,16 @@ attachment, ready to send.
 
 ## Install
 
-From GitHub (available now):
-
-```sh
-dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
-```
-
-The npm package `dsh-windows-screenshot` has been submitted and is awaiting npm
-registry review. If `npm view dsh-windows-screenshot version` reports
-`0.0.0-stage`, npm has not approved it yet — use the GitHub command above. Once
-the real version is available, this also works:
+From npm (recommended):
 
 ```sh
 dsh plugin --profile web add dsh-windows-screenshot
+```
+
+From GitHub source:
+
+```sh
+dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
 ```
 
 Use your actual profile name instead of `web` when it differs (for example
