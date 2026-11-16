@@ -2,6 +2,12 @@ English | [中文](README.zh.md)
 
 # dsh-windows-screenshot
 
+[![GitHub release](https://img.shields.io/github/v/release/KevinMKRL/dsh-windows-screenshot)](https://github.com/KevinMKRL/dsh-windows-screenshot/releases)
+[![npm](https://img.shields.io/npm/v/dsh-windows-screenshot)](https://www.npmjs.com/package/dsh-windows-screenshot)
+[![platform](https://img.shields.io/badge/platform-Windows-0078D4)](https://github.com/KevinMKRL/dsh-windows-screenshot)
+[![DSH](https://img.shields.io/badge/DSH-0.2.2--rc.1%2B-4D6BFE)](https://github.com/deepseek-ai/deepseek-harness)
+[![license](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
+
 Windows-native area, window, and full-screen screenshots with an optional
 delay — attached directly to the DeepSeek Harness composer.
 
@@ -9,7 +15,25 @@ A camera button appears in the composer's left tool row. Pick a mode and delay,
 then capture; the PNG lands in the current chat draft as a normal image
 attachment, ready to send.
 
-![Screenshot menu and composer import](docs/preview.svg)
+![Demo](docs/demo.gif)
+
+## Install
+
+From npm (recommended):
+
+```sh
+dsh plugin --profile web add dsh-windows-screenshot
+```
+
+From GitHub:
+
+```sh
+dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
+```
+
+Use your actual profile name instead of `web` when it differs (for example
+`desktop`). Enable the bundle in **Plugins** if it is not enabled automatically,
+then restart DSH if the host half was just installed.
 
 ## Features
 
@@ -34,21 +58,6 @@ attachment, ready to send.
 - Windows PowerShell 5.1 (built in) and .NET Framework 4.x.
 - DSH `0.2.2-rc.1` through `0.2.x`. Tested on DSH `0.2.2-rc.3` at 150% DPI with a
   multi-monitor virtual desktop.
-
-## Install
-
-From GitHub:
-
-```sh
-dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
-```
-
-Use your actual profile name instead of `web` when it differs (for example
-`desktop`). Enable the bundle in **Plugins** if it is not enabled automatically,
-then restart DSH if the host half was just installed.
-
-There is no npm package yet; this is a source-installable bundle. A versioned
-tarball is also attached to [GitHub Releases](https://github.com/KevinMKRL/dsh-windows-screenshot/releases).
 
 ## Use
 
@@ -97,6 +106,12 @@ Windows APIs and the system PowerShell.
   right edge of that left control group rather than immediately touching the `+`.
 - The plugin is Windows-only; other platforms get a clear error if the host is
   selected.
+
+## Compatibility reports
+
+Tried it on a DSH version not listed above? Open an issue with your DSH version,
+Windows version, and whether each mode works. Reports help mark this plugin as
+verified in the community markets.
 
 ## Uninstall
 

@@ -2,11 +2,33 @@
 
 # dsh-windows-screenshot
 
+[![GitHub release](https://img.shields.io/github/v/release/KevinMKRL/dsh-windows-screenshot)](https://github.com/KevinMKRL/dsh-windows-screenshot/releases)
+[![npm](https://img.shields.io/npm/v/dsh-windows-screenshot)](https://www.npmjs.com/package/dsh-windows-screenshot)
+[![platform](https://img.shields.io/badge/platform-Windows-0078D4)](https://github.com/KevinMKRL/dsh-windows-screenshot)
+[![DSH](https://img.shields.io/badge/DSH-0.2.2--rc.1%2B-4D6BFE)](https://github.com/deepseek-ai/deepseek-harness)
+[![license](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
+
 给 DeepSeek Harness 输入框加一个 Windows 原生截图按钮，支持区域、窗口、全屏和延迟，截完自动加入当前聊天草稿。
 
 点击输入框左侧工具栏的相机按钮，选择模式和延迟后开始截图；PNG 会作为普通图片附件进入当前输入框，可以直接发送。
 
-![截图菜单与输入框导入预览](docs/preview.svg)
+![演示](docs/demo.zh.gif)
+
+## 安装
+
+从 npm 安装（推荐）：
+
+```sh
+dsh plugin --profile web add dsh-windows-screenshot
+```
+
+从 GitHub 安装：
+
+```sh
+dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
+```
+
+如果你的 profile 不叫 `web`（例如 `desktop`），把命令里的 `web` 换成实际 profile 名。安装后在 **插件** 页启用组合包；如果刚安装 Host 半，需要重启 DSH。
 
 ## 功能
 
@@ -24,18 +46,6 @@
 - Windows 10 或 11。
 - Windows PowerShell 5.1（系统自带）和 .NET Framework 4.x。
 - DSH `0.2.2-rc.1` 到 `0.2.x`。已在 DSH `0.2.2-rc.3`、150% 缩放、多显示器虚拟桌面上测试。
-
-## 安装
-
-从 GitHub 安装：
-
-```sh
-dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
-```
-
-如果你的 profile 不叫 `web`（例如 `desktop`），把命令里的 `web` 换成实际 profile 名。安装后在 **插件** 页启用组合包；如果刚安装 Host 半，需要重启 DSH。
-
-目前没有 npm 包，这是一个可直接从源码安装的 bundle；GitHub Release 里也附带了版本化的 tarball。
 
 ## 使用
 
@@ -69,6 +79,10 @@ dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
 - 个别硬件加速窗口的 `PrintWindow` 可能返回空白，此时会回退为从冻结的桌面截图里裁剪该窗口。
 - 相机按钮放在公开的 `conversation.input.left` 插槽里；DSH 会把它渲染在权限/计划控件之后，所以它位于左侧控件组的最右边，而不是紧贴加号。
 - 插件仅支持 Windows；其他平台上如果被选中会给出明确错误。
+
+## 兼容性反馈
+
+在 README 列出的 DSH 版本之外也试过？欢迎开 issue 附上 DSH 版本、Windows 版本和三种模式的结果。反馈会帮助社区市场把插件标记为已验证。
 
 ## 卸载
 

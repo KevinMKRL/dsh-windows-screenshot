@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.3
+
+- Published the bundle on npm as `dsh-windows-screenshot`.
+- Added install badges, a bilingual demo GIF, and a GitHub social preview image.
+- Added npm as the recommended install path; GitHub source install remains supported.
+- Added a compatibility-report section to both READMEs.
+
 ## 1.0.2
 
 - Clarified the localized plugin titles to “Windows Screenshot” / “Windows 截图”; documentation is unchanged.
