@@ -1,3 +1,5 @@
+English | [中文](README.zh.md)
+
 # dsh-windows-screenshot
 
 Windows-native area, window, and full-screen screenshots with an optional
@@ -7,9 +9,7 @@ A camera button appears in the composer's left tool row. Pick a mode and delay,
 then capture; the PNG lands in the current chat draft as a normal image
 attachment, ready to send.
 
-![Screenshot menu](docs/menu.png)
-
-![Screenshot attached to the composer](docs/composer.png)
+![Screenshot menu and composer import](docs/preview.svg)
 
 ## Features
 
@@ -43,15 +43,12 @@ From GitHub:
 dsh plugin --profile web add github:KevinMKRL/dsh-windows-screenshot
 ```
 
-From npm once published:
-
-```sh
-dsh plugin --profile web add dsh-windows-screenshot
-```
-
 Use your actual profile name instead of `web` when it differs (for example
 `desktop`). Enable the bundle in **Plugins** if it is not enabled automatically,
 then restart DSH if the host half was just installed.
+
+There is no npm package yet; this is a source-installable bundle. A versioned
+tarball is also attached to [GitHub Releases](https://github.com/KevinMKRL/dsh-windows-screenshot/releases).
 
 ## Use
 
@@ -64,6 +61,10 @@ then restart DSH if the host half was just installed.
 
 > With delay **Off**, the DSH window stays where it is, so a full-screen capture
 > includes DSH itself. Use a delay to capture another application first.
+
+The chooser, tooltips, errors, and the native overlay follow DSH's active
+language. English and Simplified Chinese are included; other DSH languages fall
+back to English.
 
 ## Permissions and privacy
 
@@ -85,6 +86,17 @@ it has no supported way to return the finished image to a caller. This plugin
 therefore draws the same kind of native Windows overlay with WinForms/GDI, so the
 mode/delay chooser and automatic composer import are possible. It uses only
 Windows APIs and the system PowerShell.
+
+## Notes and limitations
+
+- Full screen captures the complete virtual desktop, including every monitor.
+- Hardware-accelerated windows can occasionally return a blank `PrintWindow`
+  image; the plugin then falls back to cropping the frozen desktop snapshot.
+- The camera button is placed in the public `conversation.input.left` slot. DSH
+  renders that slot after the permission/plan chips, so the camera sits at the
+  right edge of that left control group rather than immediately touching the `+`.
+- The plugin is Windows-only; other platforms get a clear error if the host is
+  selected.
 
 ## Uninstall
 

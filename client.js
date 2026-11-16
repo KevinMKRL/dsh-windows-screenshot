@@ -38,6 +38,7 @@ window.__ModuleLoader__.load({
       'error.token': 'The screenshot service is unavailable.',
       'error.busy': 'A screenshot is already in progress.',
       'error.failed': 'The screenshot failed.',
+      'error.timeout': 'The screenshot took too long and was cancelled.',
       'error.attach': 'Could not add the screenshot to the composer.',
       'error.session': 'The session changed, so the screenshot was not added.',
       'error.unavailable': 'Screenshots are only available on Windows.',
@@ -62,6 +63,7 @@ window.__ModuleLoader__.load({
       'error.token': '截图服务不可用。',
       'error.busy': '已有一个截图正在进行。',
       'error.failed': '截图失败。',
+      'error.timeout': '截图等待超时，已取消。',
       'error.attach': '无法把截图添加到输入框。',
       'error.session': '会话已切换，截图未添加。',
       'error.unavailable': '截图仅支持 Windows。',
@@ -365,6 +367,20 @@ window.__ModuleLoader__.load({
     function ScreenshotControl(props) {
       const t = props.t
       const tr = (key, vars) => translate(t, key, vars)
+      const failLocalized = (key) => {
+        const error = new Error(tr(key))
+        error.dshScreenshotLocalized = true
+        return error
+      }
+      const failureText = (caught) => {
+        if (caught instanceof Error && caught.dshScreenshotLocalized === true) return caught.message
+        const message = caught instanceof Error ? caught.message : String(caught)
+        if (/only available on Windows/i.test(message)) return tr('error.unavailable')
+        if (/already in progress/i.test(message)) return tr('error.busy')
+        if (/token|HTTP 403|HTTP 501/i.test(message)) return tr('error.token')
+        if (/timed out|timeout/i.test(message)) return tr('error.timeout')
+        return tr('error.failed')
+      }
       const [open, setOpen] = React.useState(false)
       const [busy, setBusy] = React.useState(false)
       const [error, setError] = React.useState(null)
@@ -469,8 +485,8 @@ window.__ModuleLoader__.load({
       const attach = React.useCallback(async (blob, name) => {
         const current = live.current
         if (current.mounted !== true) return
-        if (current.sessionId === undefined) throw new Error(tr('error.attach'))
-        if (current.sessionId !== sessionId) throw new Error(tr('error.session'))
+        if (current.sessionId === undefined) throw failLocalized('error.attach')
+        if (current.sessionId !== sessionId) throw failLocalized('error.session')
         const file = new File([blob], name, { type: 'image/png' })
         const conversation = pluginContext.get('conversation')
         const actions = current.inputActions
@@ -479,7 +495,7 @@ window.__ModuleLoader__.load({
           const accepted = actions.addAttachments(drafts.map(draft => draft.id))
           if (accepted !== true) {
             try { conversation.releaseDraftAttachments(drafts) } catch { /* best effort */ }
-            throw new Error(tr('error.attach'))
+            throw failLocalized('error.attach')
           }
           showToast('ok', tr('added'))
           return
@@ -532,11 +548,10 @@ window.__ModuleLoader__.load({
           }
           await attach(blob, name)
         } catch (caught) {
-          const message = caught instanceof Error ? caught.message : String(caught)
-          const friendly = message.includes('token') || message.includes('503') ? tr('error.token')
-            : message.includes('already in progress') ? tr('error.busy')
-              : caught instanceof TypeError ? tr('error.failed')
-                : message
+          if (!(caught instanceof Error && caught.dshScreenshotLocalized === true)) {
+            console.error('[dsh-screenshot] capture failed:', caught)
+          }
+          const friendly = failureText(caught)
           setError(friendly)
           setOpen(true)
           showToast('error', friendly)

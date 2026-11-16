@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" fill="none">
+  <defs>
+    <linearGradient id="shot-sel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7AAAFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#5686FE" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+
+  <!-- composer card -->
+  <rect x="32" y="204" width="576" height="68" rx="18" fill="#2A2B31" stroke="#4A4D55" stroke-width="1.5"/>
+  <rect x="48" y="218" width="300" height="12" rx="6" fill="#5B5F68"/>
+  <rect x="48" y="236" width="170" height="8" rx="4" fill="#464A52"/>
+
+  <!-- plus, permission pill, camera trigger -->
+  <circle cx="66" cy="244" r="13" fill="#3A3C43"/>
+  <path d="M66 238v12M60 244h12" stroke="#F0F2F7" stroke-width="2" stroke-linecap="round"/>
+  <rect x="90" y="232" width="76" height="24" rx="12" fill="#3A3C43" stroke="#4A4D55" stroke-width="1.2"/>
+  <circle cx="103" cy="244" r="5" stroke="#AEB4BF" stroke-width="1.6"/>
+  <path d="M115 244h34" stroke="#AEB4BF" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="190" cy="244" r="14" fill="#5686FE"/>
+  <rect x="181" y="240" width="18" height="12" rx="2.5" stroke="#F4F7FF" stroke-width="1.8"/>
+  <path d="M185 240l2-3h6l2 3" stroke="#F4F7FF" stroke-width="1.8" stroke-linejoin="round"/>
+  <circle cx="190" cy="246" r="3.2" stroke="#F4F7FF" stroke-width="1.8"/>
+
+  <!-- popover chooser -->
+  <rect x="40" y="26" width="300" height="154" rx="16" fill="#292A30" stroke="#4B4E57" stroke-width="1.5"/>
+  <rect x="54" y="40" width="88" height="9" rx="4.5" fill="#8E94A0"/>
+  <rect x="54" y="54" width="160" height="6" rx="3" fill="#555A63"/>
+
+  <!-- three mode cards -->
+  <rect x="54" y="70" width="84" height="54" rx="10" fill="#343A4A" stroke="#7AAAFF" stroke-width="1.6"/>
+  <rect x="82" y="82" width="28" height="28" rx="3" stroke="#7AAAFF" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <path d="M88 78v4M104 78v4M88 106v4M104 106v4M78 88h4M78 102h4M112 88h4M112 102h4" stroke="#7AAAFF" stroke-width="1.6" stroke-linecap="round"/>
+  <rect x="146" y="70" width="84" height="54" rx="10" fill="#32343B" stroke="#4A4D55" stroke-width="1.2"/>
+  <rect x="174" y="82" width="28" height="28" rx="3" stroke="#AEB4BF" stroke-width="1.6"/>
+  <rect x="174" y="82" width="28" height="7" rx="3" fill="#AEB4BF" fill-opacity="0.4"/>
+  <path d="M188 116h11a3 3 0 0 0 3-3V96" stroke="#AEB4BF" stroke-width="1.6" stroke-linecap="round"/>
+  <rect x="238" y="70" width="84" height="54" rx="10" fill="#32343B" stroke="#4A4D55" stroke-width="1.2"/>
+  <path d="M258 96V83h13M276 83h13v13M289 96v13h-13M267 109h-13V96" stroke="#AEB4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- delay row -->
+  <circle cx="60" cy="142" r="5.5" stroke="#9BA1AC" stroke-width="1.5"/>
+  <path d="M60 139v3l2.4 1.4" stroke="#9BA1AC" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="72" y="133" width="28" height="18" rx="5" fill="#3A3C43" stroke="#7AAAFF" stroke-width="1.2"/>
+  <rect x="106" y="133" width="28" height="18" rx="5" fill="#35373E"/>
+  <rect x="140" y="133" width="28" height="18" rx="5" fill="#35373E"/>
+  <rect x="174" y="133" width="28" height="18" rx="5" fill="#35373E"/>
+  <rect x="208" y="133" width="28" height="18" rx="5" fill="#35373E"/>
+  <rect x="54" y="158" width="272" height="20" rx="7" fill="#F1F3F8"/>
+
+  <!-- native overlay with selection -->
+  <rect x="368" y="28" width="240" height="150" rx="16" fill="#191A1E" stroke="#4B4E57" stroke-width="1.5"/>
+  <rect x="386" y="48" width="204" height="104" rx="8" fill="#24262C"/>
+  <rect x="398" y="86" width="10" height="10" rx="2" fill="#7AAAFF"/>
+  <rect x="420" y="72" width="136" height="72" rx="2" fill="url(#shot-sel)" stroke="#7AAAFF" stroke-width="2"/>
+  <path d="M420 72h14M420 72v14M556 144h-14M556 144v-14" stroke="#7AAAFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M488 104v8M484 108h8" stroke="#DCE6FF" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- import arrow and thumbnail -->
+  <path d="M548 182c22 0 34 12 34 30" stroke="#7AAAFF" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <path d="M578 208l4 6 6-6" stroke="#7AAAFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="516" y="222" width="40" height="34" rx="5" fill="#32343B" stroke="#7AAAFF" stroke-width="1.6"/>
+  <path d="M524 244l7-8 6 6 5-4 6 6" stroke="#AEB4BF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="546" cy="231" r="2.6" fill="#AEB4BF"/>
+</svg>

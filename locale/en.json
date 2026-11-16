@@ -1,6 +1,7 @@
 {
   "meta": {
-    "title": "Windows Screenshot",
-    "description": "Adds a camera button to the composer's left tool row. Choose Area, Window, or Full screen, pick a delay of Off, 1, 3, 5, or 10 seconds, then press Start capture. A Windows-native snip overlay appears; the finished PNG is attached to the current chat draft and saved under DSH_HOME/screenshots. Windows only."
+    "title": "Screenshot",
+    "description": "Adds a Screenshot camera button to the composer's left tool row, next to the attachment and permission controls. Choose Area, Window, or Full screen, pick a delay of Off, 1, 3, 5, or 10 seconds, then press Start capture. The Windows-native snip overlay appears; when it finishes, the PNG is attached to the current chat draft automatically and saved under DSH_HOME/screenshots. Windows only; while a 0-second capture is running the DSH window stays where it is, so use a delay to switch windows first.",
+    "detail": "docs/DETAIL.md"
   }
 }

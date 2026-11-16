@@ -1,6 +1,6 @@
 {
   "name": "dsh-windows-screenshot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Windows-native area, window, and full-screen screenshots with delay, attached directly to the DeepSeek Harness composer.",
   "type": "module",
   "exports": {
@@ -17,6 +17,7 @@
     "locale/*.json",
     "docs",
     "README.md",
+    "README.zh.md",
     "SECURITY.md",
     "CHANGELOG.md",
     "LICENSE",
