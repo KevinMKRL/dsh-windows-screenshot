@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Windows 截图",
+    "description": "在输入框左侧工具栏添加一个截图相机按钮。可选择区域、窗口或全屏，延迟可选无、1 秒、3 秒、5 秒、10 秒，然后点“开始截图”。会弹出 Windows 原生截图遮罩；截完的 PNG 自动添加到当前聊天草稿，并保存在 DSH_HOME/screenshots 下。仅支持 Windows。"
+  }
+}
