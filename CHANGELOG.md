@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Clarified the localized plugin titles to “Windows Screenshot” / “Windows 截图”; documentation is unchanged.
+
 ## 1.0.1
 
 - Added bilingual documentation: English `README.md` and Simplified Chinese
